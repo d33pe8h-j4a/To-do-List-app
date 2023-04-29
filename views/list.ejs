@@ -1,0 +1,21 @@
+<%- include('header'); -%>
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %>
+        </h1>
+    </div>
+    <div class="box">
+        <% for (const item of subsequentItemsList) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= item %>
+                </p>
+            </div>
+            <% } %>
+                <form class="item" action="/" method="post">
+                    <input type="text" name="nextListItem" placeholder="Next item" autocomplete="off">
+                    <button type="submit" name="typeOfItem" value="<%= listTitle %>">+</button>
+                </form>
+    </div>
+<%- include('footer'); -%>
